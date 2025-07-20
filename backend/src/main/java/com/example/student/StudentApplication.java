@@ -12,7 +12,7 @@ public class StudentApplication {
 	public static void main(String[] args) {
 
 		// Load the .env file before starting Spring
-		Dotenv dotenv = Dotenv.load();
+		Dotenv dotenv = Dotenv.configure().ignoreIfMissing().load();
 
 		// Set each variable from .env as a system property
 		dotenv.entries().forEach(entry -> {
